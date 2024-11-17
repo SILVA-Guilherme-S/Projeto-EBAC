@@ -117,50 +117,63 @@ int main()
 {
 	int opcao=0; //Definindo variáveis
 	int x=1;
+	char senhadigitada[20]="a"; //Definindo string(senha)
 	
-	for(x=1;x=1;)
-	{
-	    system("cls"); // Limpar a tela
+	printf("Login EBAC\n\n");
+	printf("Login de administrador!\n\nDigite sua senha: ");
+	scanf("%s", senhadigitada);
 	
-	    setlocale(LC_ALL, "Portuguese"); //Definindo linguagem
+	if(strcmp(senhadigitada, "admin") ==0) //(strcmp) verifica senha digitada
+	{ 
 	
- 	    printf("Login EBAC\n\n"); //Início do menu
-	    printf("Menu de opções:\n\n"); 
-	    printf("1 - Criar conta\n");
-	    printf("2 - Consultar conta\n");
- 	    printf("3 - Excluir conta\n\n");
-		printf("4 - Sair do sistema\n\n"); //Fim do menu
-	    printf("Selecione uma das opções:");
 	
-	    scanf("%d", &opcao); //Armazenamento da escolha do usuário
+    	for(x=1;x=1;)
+       {
+	      system("cls"); // Limpar a tela
 	
-	    system("cls");
+	      setlocale(LC_ALL, "Portuguese"); //Definindo linguagem
 	
-	switch(opcao) //Início da seleção
-	{
-		case 1:
-		criacao(); // Chamada de funções
-		break;
+ 	      printf("Login EBAC\n\n"); //Início do menu
+	      printf("Menu de opções:\n\n"); 
+	      printf("1 - Criar conta\n");
+	      printf("2 - Consultar conta\n");
+ 	      printf("3 - Excluir conta\n\n");
+		  printf("4 - Sair do sistema\n\n"); //Fim do menu
+	      printf("Selecione uma das opções:");
+	
+	      scanf("%d", &opcao); //Armazenamento da escolha do usuário
+	
+	      system("cls");
+	
+	     switch(opcao) //Início da seleção
+	     {
+		  case 1:
+	      criacao(); // Chamada de funções
+		  break;
 		
-		case 2:
-		consulta(); // Chamada de funções
-		break;
+		  case 2:
+	   	  consulta(); // Chamada de funções
+	   	  break;
 		
-		case 3:
-		excluir(); // Chamada de funções
-		break;
+		  case 3:
+		  excluir(); // Chamada de funções
+		  break;
 		
-		case 4:
-		printf("Obrigado! Por utilizar o sistema.");
-		return 0;
-		break;
+		  case 4:
+		  printf("Obrigado! Por utilizar o sistema.");
+		  return 0;
+		  break;
 		
-		default:
-		printf("Opção inexistente!\n");
-		system("pause");
-		break;
-	} //Fim da seleção
+		  default:
+		  printf("Opção inexistente!\n");
+		  system("pause");
+		  break;
+	     }    //Fim da seleção
 	
-	}
+	   }
 
+   }
+   
+   else
+       printf("Senha incorreta!");
 }
